@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนที่และการเดินทาง | วิทยาลัยเทคนิคนางรอง</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .header-section {
+            border-bottom: 3px solid #3182ce;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* ส่วนแสดงผลรูปโลโก้ทางการตัวใหม่ล่าสุด (รูปที่ 2) */
+        .logo-mini {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-mini img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #3182ce;
+            font-size: 26px;
+        }
+
+        .sub-title {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ส่วนแสดงผลรูปภาพแผนผังวิทยาลัย (รูปที่ 1) */
+        .map-image-container {
+            width: 100%;
+            background-color: #f7fafc;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .map-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .map-image-caption {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .content-block {
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #2b6cb0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        .location-details {
+            background-color: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3182ce;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+        }
+
+        .bullet-list li::before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 14px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #cbd5e0;
+            color: #2d3748;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- แถบหัวข้อแสดงโลโก้ตัวใหม่ล่าสุด (รูปที่ 2) -->
+        <div class="header-section">
+            <div class="logo-mini">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_nR5vBBsTgKDXU-VNLayUCcW9TztNtQp5z2lFX4YnVeroA=s900-c-k-c0x00ffffff-no-rj" alt="โลโก้วิทยาลัยเทคนิคนางรอง">
+            </div>
+            <div>
+                <h1>แผนที่และการเดินทาง</h1>
+                <div class="sub-title">วิทยาลัยเทคนิคนางรอง | แผนผังอาคารและข้อมูลการเดินทาง</div>
+            </div>
+        </div>
+
+        <!-- กล่องแสดงรูปภาพแผนผังวิทยาลัยออนไลน์ (รูปที่ 1) -->
+        <div class="map-image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7EriJQFvkNV3vogUbG72-tK-CccyYKRcDemjebbZBSq6u4eXZxJL5W_g&s=10" alt="แผนผังวิทยาลัยเทคนิคนางรอง">
+            <div class="map-image-caption">ภาพ: แผนผังอาคารเรียนและบริเวณภายในวิทยาลัยเทคนิคนางรอง</div>
+        </div>
+
+        <!-- รายละเอียดสถานที่ตั้งและคำแนะนำการเดินทาง -->
+        <div class="content-block location-details">
+            <h3>ข้อมูลสถานที่ตั้ง</h3>
+            <p><strong>ที่อยู่:</strong> เลขที่ 244 หมู่ 3 ถนนโชคชัย-เดชอุดม ตำบลนางรอง อำเภอนางรอง จังหวัดบุรีรัมย์ 31110</p>
+            
+            <h3 style="margin-top: 15px;">คำแนะนำในการเดินทาง</h3>
+            <ul class="bullet-list">
+                <li><strong>เดินทางด้วยรถยนต์ส่วนตัว:</strong> วิ่งบนถนนทางหลวงหมายเลข 24 (โชคชัย-เดชอุดม) วิทยาลัยจะตั้งอยู่ริมถนนใหญ่ สังเกตป้ายวิทยาลัยได้อย่างชัดเจนก่อนเข้าตัวเมืองนางรอง</li>
+                <li><strong>เดินทางด้วยรถโดยสารประจำทาง:</strong> สามารถลงที่สถานีขนส่งผู้โดยสารอำเภอนางรอง (บขส. นางรอง) แล้วต่อรถจักรยานยนต์รับจ้างหรือรถสองแถวมายังวิทยาลัยได้โดยง่าย</li>
+            </ul>
+        </div>
+
+        <!-- ปุ่มสำหรับกดกลับไปยังหน้าแรก index.html -->
+        <a href="index.html" class="btn-back">← กลับหน้าหลัก</a>
+
+        <footer>
+            © 2026 วิทยาลัยเทคนิคนางรอง. All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

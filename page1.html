@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดเกี่ยวกับวิทยาลัย | วิทยาลัยเทคนิคนางรอง</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .header-section {
+            border-bottom: 3px solid #800000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-mini {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+        }
+
+        .logo-mini img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: #800000;
+            font-size: 26px;
+        }
+
+        .sub-title {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .content-block {
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #800000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #4a4a4a;
+            text-indent: 30px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: #e0b034;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #cbd5e0;
+            color: #2d3748;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-section">
+            <div class="logo-mini">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5v0jyy4jUQ_ge1Zt95Xi8yj33IMfkJ_AA3zurlC8BpQ&s=10" alt="โลโก้">
+            </div>
+            <div>
+                <h1>รายละเอียดเกี่ยวกับวิทยาลัย</h1>
+                <div class="sub-title">วิทยาลัยเทคนิคนางรอง | สังกัดสำนักงานคณะกรรมการการอาชีวศึกษา</div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>ประวัติความเป็นมา</h3>
+            <p>วิทยาลัยเทคนิคนางรอง จัดตั้งขึ้นเพื่อขยายโอกาสทางการศึกษาด้านวิชาชีพให้แก่เยาวชนและประชาชนในอำเภอนางรอง และพื้นที่ใกล้เคียง มุ่งมั่นจัดการศึกษาอาชีวศึกษาที่มีคุณภาพ ผลิตและพัฒนากำลังคนระดับฝีมือ ระดับเทคนิค และระดับเทคโนโลยี ให้สอดคล้องกับความต้องการของตลาดแรงงานและการพัฒนาประเทศ</p>
+        </div>
+
+        <div class="content-block">
+            <h3>วิสัยทัศน์ (Vision)</h3>
+            <p>"เป็นสถาบันการอาชีวศึกษาชั้นนำ ผลิตและพัฒนากำลังคนระดับวิชาชีพให้มีคุณภาพ ได้มาตรฐานสากล เปี่ยมด้วยคุณธรรม จริยธรรม และนวัตกรรมสู่สังคม"</p>
+        </div>
+
+        <div class="content-block">
+            <h3>หลักสูตรที่เปิดสอน</h3>
+            <ul class="bullet-list">
+                <li><strong>ระดับประกาศนียบัตรวิชาชีพ (ปวช.)</strong> : รับผู้จบ ม.3 เรียนต่อ 3 ปี</li>
+                <li><strong>ระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</strong> : รับผู้จบ ปวช. หรือ ม.6 เรียนต่อ 2 ปี</li>
+                <li>สาขาวิชายอดนิยม เช่น ช่างยนต์, ช่างไฟฟ้ากำลัง, ช่างอิเล็กทรอนิกส์, คอมพิวเตอร์ธุรกิจ, การบัญชี เป็นต้น</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">← กลับหน้าหลัก</a>
+
+        <footer>
+            © 2026 วิทยาลัยเทคนิคนางรอง. All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

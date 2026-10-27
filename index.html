@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาลัยเทคนิคนางรอง | Nangrong Technical College</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .main-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* ส่วนแสดงโลโก้วิทยาลัยตัวใหม่ล่าสุดตามลิงก์ที่ส่งมา */
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12));
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #800000;
+            font-size: 28px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #b7791f;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+
+        /* กลุ่มปุ่มนำทาง 3 ปุ่ม */
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-about { background-color: #800000; }
+        .btn-about:hover { background-color: #600000; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(128, 0, 0, 0.3); }
+
+        .btn-map { background-color: #3182ce; }
+        .btn-map:hover { background-color: #2b6cb0; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(49, 130, 206, 0.3); }
+
+        .btn-contact { background-color: #2f855a; }
+        .btn-contact:hover { background-color: #276749; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(47, 133, 90, 0.3); }
+
+        .btn-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* โซนแกลเลอรีรูปภาพกิจกรรม */
+        .gallery-title {
+            text-align: left;
+            color: #4a5568;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-left: 4px solid #800000;
+            padding-left: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            padding-top: 56.25%; /* อัตราส่วนภาพ 16:9 สวยงามพอดีหน้าจอ */
+            background-color: #edf2f7;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #a0aec0;
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
+            width: 100%;
+        }
+    </style>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-card">
+        <!-- โลโก้ของวิทยาลัยตัวล่าสุดที่ส่งมา -->
+        <div class="logo-container">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_nR5vBBsTgKDXU-VNLayUCcW9TztNtQp5z2lFX4YnVeroA=s900-c-k-c0x00ffffff-no-rj" alt="โลโก้วิทยาลัยเทคนิคนางรอง">
+        </div>
+
+        <h1>วิทยาลัยเทคนิคนางรอง</h1>
+        <h2>Nangrong Technical College</h2>
+
+        <!-- ปุ่มนำทาง 3 ปุ่มหลัก -->
+        <div class="button-group">
+            <a href="page1.html" class="btn btn-about">
+                <span class="btn-icon">🏫</span>
+                รายละเอียดวิทยาลัย
+            </a>
+            <a href="page2.html" class="btn btn-map">
+                <span class="btn-icon">🗺️</span>
+                แผนที่และการเดินทาง
+            </a>
+            <a href="page3.html" class="btn btn-contact">
+                <span class="btn-icon">📞</span>
+                ข้อมูลติดต่อวิทยาลัย
+            </a>    
+        </div>
+
+        <!-- แกลเลอรีรูปภาพบรรยากาศวิทยาลัย ใส่รูปจริงทั้งหมด -->
+        <div class="gallery-title">📸 ภาพข่าวประชาสัมพันธ์และบรรยากาศวิทยาลัย</div>
+        <div class="gallery-grid">
+            <!-- รูปที่ 1: ป้ายเปิดรับสมัครเรียนรอบโควตา -->
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCXZQho1eDjHvFFDUd2VUjR4Krc4-t87E-j3DEDiq19xkSbMVh9oiZlc&s=10" alt="เปิดรับสมัครเรียน วิทยาลัยเทคนิคนางรอง">
+            </div>
+            <!-- รูปที่ 2: หน้าอาคารอำนวยการวิทยาลัย -->
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwg0DVNEhtQpG1xi8JVmGXbgPSbaHSnzsoGKjodXQdxQ&s=10" alt="อาคารอำนวยการ วิทยาลัยเทคนิคนางรอง">
+            </div>
+        </div>
+
+        <footer>
+            © 2026 วิทยาลัยเทคนิคนางรอง. All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
